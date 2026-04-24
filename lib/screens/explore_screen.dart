@@ -78,7 +78,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                           decoration: BoxDecoration(
                             color: isSelected
                                 ? theme.colorScheme.primary
-                                : theme.colorScheme.surfaceVariant,
+                                : theme.colorScheme.onSurfaceVariant,
                             borderRadius: BorderRadius.circular(12),
                             border: isSelected
                                 ? Border.all(
@@ -101,7 +101,8 @@ class _ExploreScreenState extends State<ExploreScreen> {
                                           ? theme.colorScheme.primary.withAlpha(
                                               200,
                                             )
-                                          : theme.colorScheme.surfaceVariant,
+                                          : theme.colorScheme.onSurfaceVariant
+                                                .withValues(alpha: 0.4),
                                       isSelected
                                           ? theme.colorScheme.primary
                                           : theme.colorScheme.surface,

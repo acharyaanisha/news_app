@@ -1,94 +1,3 @@
-// import 'package:flutter/material.dart';
-// import '../l10n/app_localizations.dart';
-
-// class ProfileScreen extends StatelessWidget {
-//   const ProfileScreen({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     final localizations = AppLocalizations.of(context);
-//     final theme = Theme.of(context);
-
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: const Text('Profile'),
-//         centerTitle: false,
-//         elevation: 0,
-//       ),
-//       body: Padding(
-//         padding: const EdgeInsets.all(24.0),
-//         child: Column(
-//           crossAxisAlignment: CrossAxisAlignment.start,
-//           children: [
-//             CircleAvatar(
-//               radius: 42,
-//               backgroundColor: theme.colorScheme.primary,
-//               child: Text(
-//                 'B',
-//                 style: theme.textTheme.headlineMedium?.copyWith(
-//                   color: Colors.white,
-//                   fontWeight: FontWeight.bold,
-//                 ),
-//               ),
-//             ),
-//             const SizedBox(height: 16),
-//             Text(
-//               'Brayan',
-//               style: theme.textTheme.headlineSmall?.copyWith(
-//                 fontWeight: FontWeight.bold,
-//               ),
-//             ),
-//             const SizedBox(height: 8),
-//             Text(
-//               'News enthusiast • 24 articles saved',
-//               style: theme.textTheme.bodyMedium?.copyWith(
-//                 color: theme.colorScheme.onSurfaceVariant,
-//               ),
-//             ),
-//             const SizedBox(height: 24),
-//             Text(
-//               localizations.settings,
-//               style: theme.textTheme.titleMedium?.copyWith(
-//                 fontWeight: FontWeight.bold,
-//               ),
-//             ),
-//             const SizedBox(height: 16),
-//             Card(
-//               elevation: 1,
-//               shape: RoundedRectangleBorder(
-//                 borderRadius: BorderRadius.circular(16),
-//               ),
-//               child: Column(
-//                 children: [
-//                   ListTile(
-//                     leading: const Icon(Icons.settings),
-//                     title: Text(localizations.settings),
-//                     subtitle: const Text('App preferences'),
-//                     onTap: () {},
-//                   ),
-//                   const Divider(height: 1),
-//                   ListTile(
-//                     leading: const Icon(Icons.language),
-//                     title: Text(localizations.language),
-//                     subtitle: const Text('Switch app language'),
-//                     onTap: () {},
-//                   ),
-//                   const Divider(height: 1),
-//                   ListTile(
-//                     leading: const Icon(Icons.help_outline),
-//                     title: const Text('Help & feedback'),
-//                     onTap: () {},
-//                   ),
-//                 ],
-//               ),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
-
 import 'package:flutter/material.dart';
 import '../l10n/app_localizations.dart';
 
@@ -102,7 +11,7 @@ class ProfileScreen extends StatelessWidget {
     final colorScheme = theme.colorScheme;
 
     return Scaffold(
-      backgroundColor: colorScheme.surfaceVariant.withOpacity(0.3),
+      backgroundColor: colorScheme.onSurfaceVariant.withValues(alpha: 0.1),
       appBar: AppBar(
         title: Text(
           'Profile', // Or localizations.profile if you have it
@@ -255,7 +164,7 @@ class ProfileScreen extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -295,7 +204,7 @@ class _ProfileTile extends StatelessWidget {
             decoration: BoxDecoration(
               color: Theme.of(
                 context,
-              ).colorScheme.primaryContainer.withOpacity(0.4),
+              ).colorScheme.primaryContainer.withValues(alpha: 0.4),
               borderRadius: BorderRadius.circular(10),
             ),
             child: Icon(
