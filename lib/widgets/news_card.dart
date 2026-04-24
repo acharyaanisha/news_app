@@ -46,12 +46,12 @@ class NewsCard extends StatelessWidget {
                 fit: BoxFit.cover,
                 placeholder: (context, url) => Container(
                   height: 200,
-                  color: theme.colorScheme.onSurfaceVariant,
+                  color: theme.colorScheme.surfaceVariant,
                   child: const Center(child: CircularProgressIndicator()),
                 ),
                 errorWidget: (context, url, error) => Container(
                   height: 200,
-                  color: theme.colorScheme.onSurfaceVariant,
+                  color: theme.colorScheme.surfaceVariant,
                   child: Icon(
                     Icons.image_not_supported,
                     size: 48,
@@ -126,7 +126,6 @@ class NewsCard extends StatelessWidget {
                     ),
                     maxLines: 3,
                     overflow: TextOverflow.ellipsis,
-                    textAlign: TextAlign.justify,
                   ),
 
                   const SizedBox(height: 12),

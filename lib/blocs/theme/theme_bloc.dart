@@ -34,7 +34,6 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
         await prefs.setBool('isDarkMode', newIsDark);
         emit(ThemeLoaded(isDark: newIsDark));
       } catch (e) {
-        // If saving fails, still emit the new state
         emit(ThemeLoaded(isDark: newIsDark));
       }
     }

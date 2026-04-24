@@ -61,8 +61,8 @@ class _NewsDetailScreenState extends State<NewsDetailScreen> {
   }
 
   void _shareNews() {
-    // final text =
-    //     '${currentNews.title}\n\n${currentNews.description}\n\nRead more: ${currentNews.link}';
+    final text =
+        '${currentNews.title}\n\n${currentNews.description}\n\nRead more: ${currentNews.link}';
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: const Text('News shared!'),
@@ -91,14 +91,12 @@ class _NewsDetailScreenState extends State<NewsDetailScreen> {
                   ? CachedNetworkImage(
                       imageUrl: currentNews.imageUrl,
                       fit: BoxFit.cover,
-
                       placeholder: (context, url) => Container(
-                        color: theme.colorScheme.surfaceContainerHighest,
+                        color: theme.colorScheme.surfaceVariant,
                         child: const Center(child: CircularProgressIndicator()),
                       ),
-
                       errorWidget: (context, url, error) => Container(
-                        color: theme.colorScheme.surfaceContainerHighest,
+                        color: theme.colorScheme.surfaceVariant,
                         child: Icon(
                           Icons.image_not_supported,
                           size: 64,
@@ -107,7 +105,7 @@ class _NewsDetailScreenState extends State<NewsDetailScreen> {
                       ),
                     )
                   : Container(
-                      color: theme.colorScheme.surfaceContainerHighest,
+                      color: theme.colorScheme.surfaceVariant,
                       child: Icon(
                         Icons.article,
                         size: 64,
@@ -118,7 +116,7 @@ class _NewsDetailScreenState extends State<NewsDetailScreen> {
             leading: Container(
               margin: const EdgeInsets.all(8),
               decoration: BoxDecoration(
-                color: isDark ? Colors.black54 : Colors.white.withAlpha(200),
+                color: isDark ? Colors.black54 : Colors.grey,
                 shape: BoxShape.circle,
               ),
               child: IconButton(
@@ -130,7 +128,7 @@ class _NewsDetailScreenState extends State<NewsDetailScreen> {
               Container(
                 margin: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: isDark ? Colors.black54 : Colors.white.withAlpha(200),
+                  color: isDark ? Colors.black54 : Colors.grey,
                   shape: BoxShape.circle,
                 ),
                 child: IconButton(
@@ -144,7 +142,7 @@ class _NewsDetailScreenState extends State<NewsDetailScreen> {
               Container(
                 margin: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: isDark ? Colors.black54 : Colors.white.withAlpha(200),
+                  color: isDark ? Colors.black54 : Colors.grey,
                   shape: BoxShape.circle,
                 ),
                 child: IconButton(
@@ -205,7 +203,7 @@ class _NewsDetailScreenState extends State<NewsDetailScreen> {
                           height: 40,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(8),
-                            color: theme.colorScheme.onSurfaceVariant,
+                            color: theme.colorScheme.surfaceVariant,
                           ),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8),
@@ -245,7 +243,7 @@ class _NewsDetailScreenState extends State<NewsDetailScreen> {
                   const SizedBox(height: 16),
 
                   // Divider
-                  Divider(color: theme.colorScheme.onSurfaceVariant),
+                  Divider(color: theme.colorScheme.surfaceVariant),
 
                   const SizedBox(height: 16),
 
@@ -311,7 +309,7 @@ class _NewsDetailScreenState extends State<NewsDetailScreen> {
                   Container(
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
-                      color: theme.colorScheme.onSurfaceVariant,
+                      color: theme.colorScheme.surfaceVariant,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Column(
